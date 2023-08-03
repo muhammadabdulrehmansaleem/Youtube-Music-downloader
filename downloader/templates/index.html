@@ -1,0 +1,18 @@
+<!-- Ytmusic_download/downloader/templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Downloader</title>
+</head>
+<body>
+    <h1>Video Downloader</h1>
+    <form method="post" action="{% url 'download_video' %}">
+        {% csrf_token %}
+        <input type="text" name="video_url" placeholder="Enter video URL">
+        <label>Choose format:</label>
+        <input type="radio" name="format" value="mp4" checked> MP4
+        <input type="radio" name="format" value="mp3"> MP3
+        <input type="submit" value="Download">
+    </form>
+</body>
+</html>
